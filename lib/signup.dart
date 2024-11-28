@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gym/homebage.dart';
 import 'package:gym/login.dart';
 
@@ -24,76 +25,80 @@ class Signup extends StatelessWidget {
           ),
           Center(
             child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Signup",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 50,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  const SizedBox(height: 50),
-                  _buildTextField("Name", context),
-                  const SizedBox(height: 20),
-                  _buildTextField("Email", context),
-                  const SizedBox(height: 20),
-                  _buildTextField("Phone Number", context),
-                  const SizedBox(height: 20),
-                  _buildTextField("Password", context, obscureText: true),
-                  const SizedBox(height: 20),
-                  _buildTextField("Confirm Password", context,
-                      obscureText: true),
-                  const SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Do You Have Account?",
-                        style: TextStyle(color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Signup",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50,
+                        fontWeight: FontWeight.w900,
                       ),
-                      const SizedBox(width: 5),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Login()),
-                          );
-                        },
-                        child: const Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 0, 255, 213),
-                            fontWeight: FontWeight.bold,
+                    ),
+                    const SizedBox(height: 50),
+                    _buildTextField("Name", context),
+                    const SizedBox(height: 20),
+                    _buildTextField("Email", context),
+                    const SizedBox(height: 20),
+                    _buildTextField("Phone Number", context),
+                    const SizedBox(height: 20),
+                    _buildTextField("Password", context, obscureText: true),
+                    const SizedBox(height: 20),
+                    _buildTextField("Confirm Password", context,
+                        obscureText: true),
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Do You Have Account?",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        const SizedBox(width: 5),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Login()),
+                            );
+                          },
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 0, 255, 213),
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Homebage()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 0, 255, 213),
-                      ),
-                      child: const Text(
-                        "Signup",
-                        style: TextStyle(color: Colors.black, fontSize: 17),
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      height: 50,
+                      width: 200,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Get.off(() => const Homebage());
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => const Homebage()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 0, 255, 213),
+                        ),
+                        child: const Text(
+                          "Signup",
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -114,7 +119,7 @@ class Signup extends StatelessWidget {
           filled: true,
           fillColor: Colors.grey[800],
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(14),
           ),
         ),
         style: const TextStyle(color: Colors.white),
