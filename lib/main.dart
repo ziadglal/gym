@@ -1,3 +1,4 @@
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter/material.dart';
 import 'package:gym/introbage.dart';
 
@@ -10,9 +11,10 @@ class Gym extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      theme: ThemeData.dark(),
+      home: const IntroPage(),
     );
   }
 }

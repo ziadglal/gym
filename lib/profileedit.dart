@@ -29,22 +29,24 @@ class Profileedit extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    height: 330,
+                    height: 215,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(25),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                            padding: const EdgeInsets.only(left: 20),
+                            padding: const EdgeInsets.only(left: 20, top: 35),
                             child: const CircleAvatar(
-                              radius: 80,
+                              radius: 65,
                               backgroundColor: Colors.white,
-                              child: Text("Choose Your Image"),
+                              child: Text("Tap Here"),
                             )),
                         Container(
-                          padding: const EdgeInsets.only(left: 50, top: 30),
+                          padding: const EdgeInsets.only(top: 30, right: 10),
                           child: Column(
                             children: [
                               Container(
@@ -65,39 +67,39 @@ class Profileedit extends StatelessWidget {
                               const SizedBox(
                                 height: 10,
                               ),
-                              Container(
-                                width: 150,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    labelText: 'Your Job',
-                                    labelStyle:
-                                        const TextStyle(color: Colors.white),
-                                    filled: true,
-                                    fillColor: Colors.grey[800],
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                width: 150,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    labelText: 'Your Phone Number',
-                                    labelStyle:
-                                        const TextStyle(color: Colors.white),
-                                    filled: true,
-                                    fillColor: Colors.grey[800],
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // Container(
+                              //   width: 150,
+                              //   child: TextField(
+                              //     decoration: InputDecoration(
+                              //       labelText: 'Your Job',
+                              //       labelStyle:
+                              //           const TextStyle(color: Colors.white),
+                              //       filled: true,
+                              //       fillColor: Colors.grey[800],
+                              //       border: OutlineInputBorder(
+                              //         borderRadius: BorderRadius.circular(30),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
+                              // const SizedBox(
+                              //   height: 10,
+                              // ),
+                              // Container(
+                              //   width: 150,
+                              //   child: TextField(
+                              //     decoration: InputDecoration(
+                              //       labelText: 'Your Phone Number',
+                              //       labelStyle:
+                              //           const TextStyle(color: Colors.white),
+                              //       filled: true,
+                              //       fillColor: Colors.grey[800],
+                              //       border: OutlineInputBorder(
+                              //         borderRadius: BorderRadius.circular(30),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -125,7 +127,7 @@ class Profileedit extends StatelessWidget {
                     height: 200,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(25),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(
@@ -165,7 +167,7 @@ class Profileedit extends StatelessWidget {
                     height: 220,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(25),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(

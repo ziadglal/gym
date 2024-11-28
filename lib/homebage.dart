@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gym/exercisesone.dart';
 import 'package:gym/profile.dart';
 
@@ -9,121 +10,54 @@ class Homebage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 31, 27, 27),
-      body: ListView(
-        children: [
-          welcomeprofilepic(context),
-          graphcontainer(),
-          trainingcenter(),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const exercisesone()));
-            },
-            child: Stack(
-              children: [
-                Image.asset(
-                  "assets/Rectangle 39_m_vertical.png",
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 110, left: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Full Body",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Text(
-                        "5 Exercises",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 30),
-          Stack(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: SafeArea(
+          child: ListView(
             children: [
-              Image.asset(
-                "assets/Rectangle 39_m_vertical.png",
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
+              welcomeprofilepic(context),
+              graphcontainer(),
+              trainingcenter(),
+              _workoutBox(
+                  imagePath: "assets/Rectangle 39_m_vertical.png",
+                  workoutName: "Full Body",
+                  description: "Back, Chest, Core, Legs"),
+              _workoutBox(
+                  imagePath: "assets/Rectangle 39_m_vertical-2.png",
+                  workoutName: "Cardio",
+                  description: "Treadmill, Elliptical, Rope jumping"),
+              _workoutBox(
+                  imagePath: "assets/Rectangle 20-2.png", workoutName: "Arm Day",
+                  description: "Biceps, Triceps, Shoulders"),
+              _workoutBox(
+                  imagePath: "assets/Rectangle3.png", workoutName: "Leg Day",
+                  description: "Quads, Hamstrings, Calfs"),
               const Padding(
-                padding: EdgeInsets.only(top: 110, left: 20),
+                padding: EdgeInsets.only(top: 20, left: 20, bottom: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Full Body",
-                      style: TextStyle(color: Colors.white),
+                      "Explor",
+                      style: TextStyle(color: Colors.white, fontSize: 30),
                     ),
                     Text(
-                      "5 Exercises",
-                      style: TextStyle(color: Colors.white),
+                      "New Exercises For Today",
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                     ),
                   ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 30),
-          Stack(
-            children: [
-              Image.asset(
-                "assets/Rectangle 39_m_vertical.png",
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 110, left: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Full Body",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Text(
-                      "5 Exercises",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 30),
-          const Padding(
-            padding: EdgeInsets.only(top: 20, left: 20, bottom: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Explor",
-                  style: TextStyle(color: Colors.white, fontSize: 30),
-                ),
-                Text(
-                  "New Exercises For Today",
-                  style: TextStyle(color: Colors.white, fontSize: 10),
-                ),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 
   Widget welcomeprofilepic(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 50, left: 8, right: 2),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -135,8 +69,8 @@ class Homebage extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 30),
               ),
               Text(
-                "Monday, 18 Aug 2005",
-                style: TextStyle(color: Colors.white, fontSize: 10),
+                "Mon, 18 Aug 2005",
+                style: TextStyle(color: Colors.white, fontSize: 16),
               ),
             ],
           ),
@@ -148,7 +82,7 @@ class Homebage extends StatelessWidget {
               );
             },
             child: const CircleAvatar(
-              radius: 60,
+              radius: 30,
               backgroundImage: AssetImage("assets/20221023_152100.jpg"),
             ),
           ),
@@ -159,7 +93,10 @@ class Homebage extends StatelessWidget {
 
   Widget graphcontainer() {
     return Container(
-      color: Colors.black,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.black,
+      ),
       margin: const EdgeInsets.only(top: 20),
       padding: const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
       child: Column(
@@ -216,7 +153,7 @@ class Homebage extends StatelessWidget {
 
   Widget trainingcenter() {
     return const Padding(
-      padding: EdgeInsets.only(top: 20, left: 20, bottom: 20),
+      padding: EdgeInsets.only(top: 20, left: 8, bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -230,6 +167,65 @@ class Homebage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _workoutBox({required String imagePath, required String workoutName, required String description}) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {
+            Get.to(() => WorkoutPage(workoutName: workoutName));
+          },
+          child: Stack(
+            children: [
+              Container(
+                // decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
+                height: 160,
+                width: double.infinity,
+                child: Image.asset(
+                  imagePath,
+                  width: double.infinity,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 107),
+                // color: Colors.white24,
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: <Color>[
+                      Colors.black,
+                      Colors.black87,
+                      Colors.black38,
+                      Colors.transparent
+                    ])),
+                width: double.infinity,
+                height: 53,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 100, left: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      workoutName,
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    Text(
+                      description,
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 30),
+      ],
     );
   }
 }
