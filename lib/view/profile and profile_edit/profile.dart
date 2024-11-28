@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym/profileedit.dart';
+import 'package:gym/view/profile%20and%20profile_edit/profile_edit.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -36,31 +36,28 @@ class Profile extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        body: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: ListView(
+            children: [
+              Column(
                 children: [
                   Container(
-                    height: 195,
+                    height: 250,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                            padding: const EdgeInsets.only(left: 20, top: 37),
+                            padding: const EdgeInsets.only(left: 10),
                             child: const CircleAvatar(
-                                radius: 50,
+                                radius: 60,
                                 backgroundImage:
-                                    AssetImage("assets/20221023_152100.jpg"))
-                        ),
+                                    AssetImage("assets/20221023_152100.jpg"))),
                         Container(
-                          padding: const EdgeInsets.only(top: 30, right: 30),
+                          padding: const EdgeInsets.only(left: 20, top: 30),
                           child: Column(
                             children: [
                               const Text(
@@ -68,24 +65,24 @@ class Profile extends StatelessWidget {
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20),
                               ),
-                              // const SizedBox(
-                              //   height: 10,
-                              // ),
-                              // const Text(
-                              //   "Flutter Developer",
-                              //   style:
-                              //       TextStyle(color: Colors.white, fontSize: 20),
-                              // ),
-                              // const SizedBox(
-                              //   height: 10,
-                              // ),
-                              // const Text(
-                              //   "01069161841",
-                              //   style:
-                              //       TextStyle(color: Colors.white, fontSize: 20),
-                              // ),
                               const SizedBox(
-                                height: 25,
+                                height: 10,
+                              ),
+                              const Text(
+                                "Flutter Developer",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const Text(
+                                "01069161841",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              const SizedBox(
+                                height: 10,
                               ),
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
@@ -110,7 +107,7 @@ class Profile extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 30),
                     height: 200,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(
@@ -141,7 +138,7 @@ class Profile extends StatelessWidget {
                     height: 220,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(
@@ -192,7 +189,7 @@ class Profile extends StatelessWidget {
                     height: 200,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(
@@ -243,13 +240,12 @@ class Profile extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ));
   }
 }
 
-// ignore: must_be_immutable
 class Exercises extends StatelessWidget {
   Exercises({super.key, this.ex1, this.ex2, this.ex3, this.ex4, this.ex5});
   String? ex1;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym/size_config.dart';
+import 'package:gym/view/size_config.dart';
 
 class Profileedit extends StatelessWidget {
   const Profileedit({super.key});
@@ -29,24 +29,22 @@ class Profileedit extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    height: 215,
+                    height: 330,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                            padding: const EdgeInsets.only(left: 20, top: 35),
+                            padding: const EdgeInsets.only(left: 20),
                             child: const CircleAvatar(
-                              radius: 65,
+                              radius: 80,
                               backgroundColor: Colors.white,
-                              child: Text("Tap Here"),
+                              child: Text("Choose Your Image"),
                             )),
                         Container(
-                          padding: const EdgeInsets.only(top: 30, right: 10),
+                          padding: const EdgeInsets.only(left: 50, top: 30),
                           child: Column(
                             children: [
                               Container(
@@ -67,39 +65,39 @@ class Profileedit extends StatelessWidget {
                               const SizedBox(
                                 height: 10,
                               ),
-                              // Container(
-                              //   width: 150,
-                              //   child: TextField(
-                              //     decoration: InputDecoration(
-                              //       labelText: 'Your Job',
-                              //       labelStyle:
-                              //           const TextStyle(color: Colors.white),
-                              //       filled: true,
-                              //       fillColor: Colors.grey[800],
-                              //       border: OutlineInputBorder(
-                              //         borderRadius: BorderRadius.circular(30),
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
-                              // const SizedBox(
-                              //   height: 10,
-                              // ),
-                              // Container(
-                              //   width: 150,
-                              //   child: TextField(
-                              //     decoration: InputDecoration(
-                              //       labelText: 'Your Phone Number',
-                              //       labelStyle:
-                              //           const TextStyle(color: Colors.white),
-                              //       filled: true,
-                              //       fillColor: Colors.grey[800],
-                              //       border: OutlineInputBorder(
-                              //         borderRadius: BorderRadius.circular(30),
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
+                              Container(
+                                width: 150,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Your Job',
+                                    labelStyle:
+                                        const TextStyle(color: Colors.white),
+                                    filled: true,
+                                    fillColor: Colors.grey[800],
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                width: 150,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Your Phone Number',
+                                    labelStyle:
+                                        const TextStyle(color: Colors.white),
+                                    filled: true,
+                                    fillColor: Colors.grey[800],
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                  ),
+                                ),
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
@@ -127,7 +125,7 @@ class Profileedit extends StatelessWidget {
                     height: 200,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(
@@ -167,7 +165,7 @@ class Profileedit extends StatelessWidget {
                     height: 220,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(50),
                       color: const Color.fromARGB(255, 47, 41, 41),
                     ),
                     child: Column(

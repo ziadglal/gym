@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gym/signup.dart';
+import 'package:gym/view/login%20and%20signup/signup.dart';
 
-class IntroPage extends StatelessWidget {
-  const IntroPage({super.key});
+class IntroPage extends StatefulWidget {
+  IntroPage({super.key});
 
+  @override
+  State<IntroPage> createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +41,7 @@ class IntroPage extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(flex: 5),
+              const Spacer(flex: 4),
               const Text(
                 "Welcome To",
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -56,19 +61,13 @@ class IntroPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white, fontSize: 10),
                 ),
               ),
-              const Spacer(),
+              const Spacer(flex: 2),
               SizedBox(
                 height: 50,
                 width: 200,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.off(() => const Signup());
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const Signup(),
-                    //   ),
-                    // );
+                    Get.to(const Signup());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 0, 255, 213),
@@ -79,7 +78,7 @@ class IntroPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(flex: 2),
+              const Spacer(flex: 1),
             ],
           ),
         ],
